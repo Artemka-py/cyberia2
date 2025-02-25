@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фестиваль Киберия</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
     <!--    <link rel="stylesheet" href="styles/styles.css">-->
@@ -15,7 +14,7 @@
         * {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 1px;
             font-style: normal;
             margin: 0;
@@ -69,9 +68,6 @@
             gap: 25px;
             padding: 25px 30px;
             margin: 0;
-
-            /*border-radius: 50px; !* Делаем закругление *!*/
-            /*border: 2px solid #711e1e; !* Красная обводка *!*/
         }
 
         nav ul li {
@@ -132,7 +128,7 @@
 
             .navigation {
                 position: absolute;
-                top: 60px;
+                top: 87px;
                 right: 0;
                 width: 100%;
                 height: 100vh;
@@ -235,23 +231,8 @@
             margin-top: 50px;
         }
 
-        .btn {
-            background-color: #711e1e;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 22px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #711e1e;
-        }
-
         section {
             padding: 100px 50px;
-            /*text-align: center;*/
         }
 
         section img {
@@ -653,6 +634,99 @@
             }
         }
 
+    /*   --------------------- */
+        /* Дополнительная адаптивность для планшетов (макс. 1024px) */
+        @media (max-width: 1024px) {
+            #hero h1 {
+                font-size: 120px;
+            }
+
+            .date-box {
+                width: 140px;
+                height: 140px;
+            }
+
+            .goals-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .goals-container div {
+                max-width: 40%;
+            }
+
+            .location-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .location-card {
+                width: 45%;
+            }
+        }
+
+        /* Дополнительная адаптивность для мобильных (макс. 768px) */
+        @media (max-width: 768px) {
+            /* Уменьшение заголовка */
+            #hero h1 {
+                font-size: 80px;
+            }
+
+            /* Центрирование контента */
+            #hero p {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            .date-box {
+                width: 120px;
+                height: 120px;
+                font-size: 18px;
+            }
+
+            /* Упрощаем цели и задачи */
+            .goals-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .goals-container div {
+                max-width: 90%;
+            }
+
+            /* Секция "Локация" */
+            .location-card {
+                width: 90%;
+            }
+
+            /* Программа */
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Контакты */
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                width: 90%;
+            }
+
+            /* Форма подписки */
+            #subscribe-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #subscribe-form input,
+            #subscribe-form button {
+                width: 100%;
+            }
+        }
+
 
     </style>
 </head>
@@ -669,7 +743,7 @@
         </div>
         <nav class="navigation">
             <ul>
-                <li><a href="#about">О фестивале</a></li>
+                <li><a href="#about">О проекте</a></li>
 
                 <li><a href="#locations">Площадка</a></li>
                 <li><a href="#program">Программа</a></li>
@@ -695,7 +769,7 @@
 </section>
 
 <section id="about">
-    <h2>О фестивале</h2>
+    <h2>О проекте</h2>
     <p>Это грандиозное событие летом в августе 2026 года,</p>
     <p>объединяющее киберспорт, фиджитал-спорт, IT-бизнес,</p>
     <p>и игровую индустрию по всему миру.</p>

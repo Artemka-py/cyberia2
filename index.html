@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фестиваль Киберия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <!--    <link rel="stylesheet" href="styles/styles.css">-->
+    <link rel="stylesheet" href="styles/rockwell.css">
+    <style>
+        /* Общие стили */
+        * {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Хедер */
+        header {
+            position: fixed;
+            top: -120px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            transition: top 0.4s ease-in-out;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5); /* Затемнённый фон */
+        }
+
+        /* Контейнер */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Логотип */
+        .logo h3 {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            padding-bottom: 7px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        /* Навигация */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding: 25px 30px;
+            margin: 0;
+
+            /*border-radius: 50px; !* Делаем закругление *!*/
+            /*border: 2px solid #711e1e; !* Красная обводка *!*/
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff3b3b;
+        }
+
+        /* Хедер появляется раньше */
+        .scrolled {
+            top: 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Бургер-меню */
+            .burger {
+                display: block;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                position: relative;
+                z-index: 1100;
+            }
+
+            .burger div {
+                width: 100%;
+                height: 4px;
+                background: white;
+                margin: 6px 0;
+                transition: 0.3s;
+            }
+
+            .navigation {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 6, 5, 0.95);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .navigation ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .navigation.active {
+                transform: translateX(0);
+            }
+
+            /* Анимация бургер-меню */
+            .burger.active div:nth-child(1) {
+                transform: translateY(10px) rotate(45deg);
+            }
+
+            .burger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger.active div:nth-child(3) {
+                transform: translateY(-10px) rotate(-45deg);
+            }
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Rockwell', serif;
+        }
+
+        body {
+            background-color: #0a0605;
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(at 59.763166473738785% 40.59054099364492%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 22.471612957700525% 35.704120386453496%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 1) 0%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 0) 100%), radial-gradient(at 67.37922258981885% 75.80450321537006%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 92.82187922810469% 63.79969759470319%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 70.26938214182267% 84.41098248612862%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 1) 0%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 0) 100%), radial-gradient(at 95.37780793137706% 20.00277344638375%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 4.979914697977583% 39.05506690284388%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 91.46257629925401% 11.277263351309653%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 1) 0%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 0) 100%), radial-gradient(at 7.956066289826014% 72.1943417966783%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 88.94954258488357% 86.25135372181624%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%), radial-gradient(at 67.88970869398831% 94.38792851285258%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 1) 0%, hsla(358.348623853211, 91.59663865546219%, 23.333333333333332%, 0) 100%), radial-gradient(at 88.27383483662119% 56.09087188469002%, hsla(12, 33.33333333333333%, 2.941176470588235%, 1) 0%, hsla(12, 33.33333333333333%, 2.941176470588235%, 0) 100%);
+
+        }
+
+        .container-line {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: white;
+        }
+
+        .date-box {
+            background: linear-gradient(to top right, transparent calc(49.5% - 3px), #ffffff calc(49.5% - 2px), #ffffff 49.5%, transparent 50%) top right,
+            linear-gradient(to top left, transparent calc(49.5% - 3px), #ffffff calc(49.5% - 2px), #ffffff 49.5%, transparent 50%) top left,
+            linear-gradient(to bottom right, transparent calc(49.5% - 3px), #ffffff calc(49.5% - 2px), #ffffff 49.5%, transparent 50%) bottom right,
+            linear-gradient(to bottom left, transparent calc(49.5% - 3px), #ffffff calc(49.5% - 2px), #ffffff 49.5%, transparent 50%) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .date-box::before {
+            content: "";
+            display: block;
+            padding-top: 57.73%;
+        }
+
+        #hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 200px;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            margin-top: 50px;
+        }
+
+        .btn {
+            background-color: #711e1e;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 22px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #711e1e;
+        }
+
+        section {
+            padding: 100px 50px;
+            /*text-align: center;*/
+        }
+
+        section img {
+            max-width: 35%;
+            height: auto;
+            padding-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0a0605;
+            font-size: 18px;
+        }
+
+        h2 {
+            padding-top: 15px;
+            padding-bottom: 40px;
+            font-size: 45px;
+        }
+
+        .goals-container {
+            display: flex;
+            justify-content: space-around; /* Равномерное распределение */
+            align-items: flex-start;
+            text-align: center;
+            flex-wrap: wrap; /* Позволяет перенос на новую строку при узком экране */
+            gap: 30px;
+        }
+
+        .goals-container div {
+            flex: 1; /* Равномерное распределение ширины */
+            max-width: 220px; /* Ограничение ширины каждого блока */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .goals-container img {
+            width: 80px; /* Размер иконок */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .goals-list {
+            font-size: 14px;
+            list-style: disc;
+            padding: 0;
+            text-align: center;
+            font-weight: 400;
+            margin-top: 15px;
+        }
+
+        .goals-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+            text-align: left; /* Выравниваем текст списка влево */
+        }
+
+        .goals-list li::before {
+            position: absolute;
+            left: 0;
+            color: #ff3b3b;
+            font-weight: bold;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .goals-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .goals-container div {
+                max-width: 80%;
+            }
+        }
+
+        .location-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .location-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .location-card:hover {
+            transform: scale(1.05);
+        }
+
+        .location-card img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .location-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .location-card p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .map-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .map-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .location-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .location-card {
+                width: 80%;
+            }
+
+            .map-container img {
+                max-width: 100%;
+            }
+        }
+
+        /* Программа фестиваля */
+        #program {
+            color: white;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .program-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #program h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .program-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        .program-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .program-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .program-item p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .btn-program {
+            display: inline-block;
+            margin-top: 40px;
+            background: #ff3b3b;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-program:hover {
+            background: #d12f2f;
+            transform: scale(1.05);
+        }
+
+
+        /* Секция "Новости и события" */
+        #news {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9));
+            color: white;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        #news h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        #news p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        /* Форма подписки */
+        #subscribe-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #subscribe-form input {
+            padding: 15px;
+            font-size: 18px;
+            width: 300px;
+            border: 2px solid #ff3b3b;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+            color: white;
+        }
+
+        #subscribe-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #subscribe-form input:focus {
+            border-color: #ff5e5e;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #subscribe-form button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff3b3b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #subscribe-form button:hover {
+            background-color: #d12f2f;
+            transform: scale(1.05);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            #subscribe-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #subscribe-form input {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            #subscribe-form button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Контейнер для контактов */
+        .contacts-container {
+            text-align: center;
+            padding: 80px 50px;
+            color: white;
+        }
+
+        .contacts-container h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .contacts-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        /* Карточки контактов */
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 12px;
+            width: 270px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .contact-card img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        /* Социальные сети */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Карта */
+        .map-container {
+            margin-top: 30px;
+        }
+
+        .map-container iframe {
+            border-radius: 12px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                width: 90%;
+            }
+
+            .social-icons {
+                gap: 10px;
+            }
+
+            .social-icons a img {
+                width: 35px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h3>Киберия</h3>
+        </div>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#about">О фестивале</a></li>
+
+                <li><a href="#locations">Площадка</a></li>
+                <li><a href="#program">Программа</a></li>
+                <!--                <li><a href="#participants">Участники</a></li>-->
+                <!--                <li><a href="#sport">Спорт</a></li>-->
+                <!--                <li><a href="#partners">Партнеры</a></li>-->
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<section id="hero">
+    <h1>Киберия</h1>
+    <div class="container-line">
+        <div class="line"></div>
+        <div class="date-box">Август 2026</div>
+        <div class="line"></div>
+    </div>
+    <p>Место, где технологии встречаются с культурой.</p>
+</section>
+
+<section id="about">
+    <h2>О фестивале</h2>
+    <p>Это грандиозное событие летом в августе 2026 года,</p>
+    <p>объединяющее киберспорт, фиджитал-спорт, IT-бизнес,</p>
+    <p>и игровую индустрию по всему миру.</p>
+    <br>
+    <p>Это платформа для инноваций, бизнеса, нетворкинга и инвестиций!</p>
+
+    <h2>Цели и задачи</h2>
+    <div class="goals-container">
+        <div>
+            <img src="./icons/integration.png" alt="Сотрудничество">
+            <p>Сотрудничество</p>
+            <p>стран БРИКС</p>
+            <p>в сфере IT</p>
+            <ul class="goals-list">
+                <li>Создание единой платформы для обмена опытом и технологиями</li>
+                <li>Запуск совместных программ развития киберспорта</li>
+                <li>Поддержка IT-предпринимателей и стартапов</li>
+            </ul>
+        </div>
+        <div>
+            <img src="./icons/team.png" alt="Популяризация">
+            <p>Популяризация</p>
+            <p>киберспорта и</p>
+            <p>фиджитал-спорта</p>
+            <ul class="goals-list">
+                <li>Организация турниров, фестивалей и образовательных программ</li>
+                <li>Внедрение фиджитал-спорта — синтеза физических и цифровых дисциплин</li>
+                <li>Развитие экосистемы для игроков, тренеров и IT-специалистов</li>
+            </ul>
+        </div>
+        <div>
+            <img src="./icons/museum.png" alt="Поддержка региона">
+            <p>Поддержка</p>
+            <p>имиджа региона</p>
+            <ul class="goals-list">
+                <li>Формирование Южно-Сахалинска как центра цифровых инноваций</li>
+                <li>Привлечение международных инвесторов и технологических компаний</li>
+                <li>Создание новых рабочих мест и развитие IT-инфраструктуры</li>
+            </ul>
+        </div>
+        <div>
+            <img src="./icons/virtual-reality.png" alt="Продвижение">
+            <p>Продвижение</p>
+            <p>цифровых медиа и</p>
+            <p>инвестиций в новые</p>
+            <p>технологии</p>
+            <ul class="goals-list">
+                <li>Инвестирование в креативные индустрии и цифровой контент</li>
+                <li>Развитие инновационных платформ</li>
+                <li>Внедрение технологий AI, VR и Web3 в медиа</li>
+            </ul>
+        </div>
+        <div>
+            <img src="./icons/meeting-room.png" alt="Нетворкинг">
+            <p>Нетворкинг:</p>
+            <p>бизнес, разработчики,</p>
+            <p>инвесторы</p>
+            <ul class="goals-list">
+                <li>Проведение конференций, форумов и закрытых встреч</li>
+                <li>Создание единого хаба для коммуникации игроков индустрии</li>
+                <li>Развитие партнёрских программ и международного сотрудничества</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="locations">
+    <h2>Площадка</h2>
+    <p>Аэродром "Пушистый" — технологический хаб для дронов и IT-инноваций.</p>
+
+    <div class="location-container">
+        <div class="location-card">
+            <img src="./icons/drone.png" alt="Дронопорт">
+            <h3>Первый дронопорт России</h3>
+            <p>Уникальная площадка, сочетающая передовые технологии, просторные пространства и историческую
+                атмосферу.</p>
+        </div>
+
+        <div class="location-card">
+            <img src="./icons/infrastructure.png" alt="Инфраструктура">
+            <h3>Современная инфраструктура</h3>
+            <p>К июлю 2025 года будет доступно 5 ангаров по 1800 м² для проведения мероприятий в любых погодных
+                условиях.</p>
+        </div>
+
+        <div class="location-card">
+            <img src="./icons/cultural.png" alt="Культурный центр">
+            <h3>Культурный центр</h3>
+            <p>Место проведения фестиваля "Крылья Сахалина" и других крупных событий, объединяющих музыку и
+                технологии.</p>
+        </div>
+
+        <div class="location-card">
+            <img src="./icons/creative.png" alt="Креативные индустрии">
+            <h3>Пространство для креативных индустрий</h3>
+            <p>Подходит для арт-объектов, мультимедийных инсталляций и цифровых перформансов.</p>
+        </div>
+
+        <div class="location-card">
+            <img src="./icons/map.png" alt="Локация">
+            <h3>Удобное расположение</h3>
+            <p>Находится недалеко от Корсакова, с удобными подъездными путями и развитой инфраструктурой.</p>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <h3>Как добраться?</h3>
+        <div style="margin-top: 15px; position:relative;overflow:hidden;"><a
+                href="https://yandex.ru/maps/org/aerodrom_pushisty/201272083320/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Аэродром Пушистый</a><a
+                href="https://yandex.ru/maps/11445/korsakov/category/aerodrome/200992989394/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Аэродром в Корсакове</a>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=142.812354%2C46.619963&mode=search&oid=201272083320&ol=biz&z=15.32"
+                    width="100%" height="400" frameborder="1" allowfullscreen="true"
+                    style="position:relative;"></iframe>
+        </div>
+        <!--        <img src="./images/map-placeholder.jpg" alt="Карта проезда">-->
+    </div>
+</section>
+
+
+<section id="program">
+    <div class="program-container">
+        <h2>Программа фестиваля</h2>
+        <p class="subtitle">Следите за обновлениями! Полная программа появится скоро.</p>
+
+        <div class="program-grid">
+            <div class="program-item">
+                <h3>Выступления и дискуссии</h3>
+                <p>Лекции и панельные дискуссии от топовых экспертов IT, киберспорта и цифровых технологий.</p>
+            </div>
+
+            <div class="program-item">
+                <h3>Киберспортивные турниры</h3>
+                <p>Турниры с участием мировых команд. Трансляции, аналитика, призовые фонды.</p>
+            </div>
+
+            <div class="program-item">
+                <h3>Фиджитал-спорт</h3>
+                <p>Инновационный формат соревнований, сочетающий физическую активность и технологии.</p>
+            </div>
+
+            <div class="program-item">
+                <h3>Нетворкинг и бизнес-форум</h3>
+                <p>Обсуждение новых бизнес-моделей, партнерства и возможностей инвестиций.</p>
+            </div>
+        </div>
+
+        <a href="#news" class="btn-program">Следите за новостями</a>
+    </div>
+</section>
+
+<!--<section id="participants">-->
+<!--    <h2>Участники</h2>-->
+<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
+<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
+<!--</section>-->
+
+<!--<section id="sport">-->
+<!--    <h2>Спорт</h2>-->
+<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
+<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
+<!--</section>-->
+
+<!--<section id="partners">-->
+<!--    <h2>Партнеры</h2>-->
+<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
+<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
+<!--</section>-->
+
+<section id="news">
+    <h2>Новости и события</h2>
+    <p>Следите за обновлениями, оставьте свою почту и получайте свежие новости о фестивале!</p>
+
+    <form id="subscribe-form">
+        <input type="email" id="email" placeholder="Введите вашу почту" required>
+        <button type="submit">Подписаться</button>
+    </form>
+
+    <p id="confirmation-message" style="display: none; margin-top: 15px;">Спасибо! Вы подписаны на новости.</p>
+</section>
+
+
+<section id="contacts">
+    <div class="contacts-container">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами для получения дополнительной информации.</p>
+
+        <div class="contact-details">
+            <div class="contact-card">
+                <!--                <img src="./icons/location.png" alt="Адрес">-->
+                <h3>Адрес</h3>
+                <p>Южно-Сахалинск, Аэродром "Пушистый"</p>
+            </div>
+
+            <div class="contact-card">
+                <!--                <img src="./icons/phone.png" alt="Телефон">-->
+                <h3>Телефон</h3>
+                <p>+7 (999) 123-45-67</p>
+            </div>
+
+            <div class="contact-card">
+                <!--                <img src="./icons/email.png" alt="Email">-->
+                <h3>Email</h3>
+                <p>cyberia.event@yandex.ru</p>
+            </div>
+
+            <div class="contact-card">
+                <!--                <img src="./icons/social.png" alt="Соцсети">-->
+                <h3>Социальные сети</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./icons/vk.png" alt="VK"></a>
+                    <a href="#"><img src="./icons/tg.png" alt="Telegram"></a>
+                    <a href="#"><img src="./icons/yt.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h3>Как добраться?</h3>
+            <div style="margin-top: 15px; position:relative;overflow:hidden;"><a
+                    href="https://yandex.ru/maps/org/aerodrom_pushisty/201272083320/?utm_medium=mapframe&utm_source=maps"
+                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Аэродром Пушистый</a><a
+                    href="https://yandex.ru/maps/11445/korsakov/category/aerodrome/200992989394/?utm_medium=mapframe&utm_source=maps"
+                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Аэродром в Корсакове</a>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=142.812354%2C46.619963&mode=search&oid=201272083320&ol=biz&z=15.32"
+                        width="100%" height="400" frameborder="1" allowfullscreen="true"
+                        style="position:relative;"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <p>&copy; 2025 Киберия. Все права защищены.</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+        const hero = document.querySelector("#hero");
+        const navLinks = document.querySelectorAll("nav ul li a");
+        const burger = document.querySelector(".burger");
+        const navigation = document.querySelector(".navigation");
+
+        function checkScroll() {
+            const heroHeight = hero.offsetHeight;
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > heroHeight * 0.3) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+
+        function smoothScroll(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - header.offsetHeight,
+                    behavior: "smooth"
+                });
+
+                // Закрываем бургер-меню после клика
+                navigation.classList.remove("active");
+                burger.classList.remove("active");
+            }
+        }
+
+        // Открытие и закрытие бургер-меню
+        burger.addEventListener("click", function () {
+            burger.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        // Закрытие меню при выборе пункта
+        navLinks.forEach(link => {
+            link.addEventListener("click", smoothScroll);
+        });
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+
+        // Автоскролл к секции hero после загрузки страницы
+        setTimeout(() => {
+            window.scrollTo({
+                top: hero.offsetTop,
+                behavior: "smooth"
+            });
+        }, 500); // Задержка 500 мс для плавного эффекта
+    });
+
+    document.getElementById("subscribe-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let emailInput = document.getElementById("email");
+        let confirmationMessage = document.getElementById("confirmation-message");
+
+        if (emailInput.value.trim() !== "") {
+            confirmationMessage.style.display = "block";
+            emailInput.value = "";
+        }
+    });
+</script>
+</body>
+</html>

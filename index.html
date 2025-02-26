@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фестиваль Киберия</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <!--    <link rel="stylesheet" href="styles/styles.css">-->
+    <title>Проект Киберия</title>
     <link rel="stylesheet" href="styles/rockwell.css">
     <style>
         /* Общие стили */
@@ -143,7 +139,8 @@
 
             .navigation ul {
                 flex-direction: column;
-                gap: 20px;
+                gap: 40px;
+                font-size: 40px;
             }
 
             .navigation.active {
@@ -284,7 +281,7 @@
             padding: 0;
             text-align: center;
             font-weight: 400;
-            margin-top: 15px;
+            margin-top: 25px;
         }
 
         .goals-list li {
@@ -379,7 +376,7 @@
             }
         }
 
-        /* Программа фестиваля */
+        /* Программа */
         #program {
             color: white;
             padding: 80px 50px;
@@ -435,7 +432,7 @@
         .btn-program {
             display: inline-block;
             margin-top: 40px;
-            background: #ff3b3b;
+            background: #640b0b;
             color: white;
             padding: 15px 35px;
             font-size: 18px;
@@ -445,7 +442,6 @@
         }
 
         .btn-program:hover {
-            background: #d12f2f;
             transform: scale(1.05);
         }
 
@@ -481,7 +477,7 @@
             padding: 15px;
             font-size: 18px;
             width: 300px;
-            border: 2px solid #ff3b3b;
+            border: 2px solid #640b0b;
             border-radius: 8px;
             outline: none;
             transition: all 0.3s ease-in-out;
@@ -494,14 +490,14 @@
         }
 
         #subscribe-form input:focus {
-            border-color: #ff5e5e;
+            border-color: #640b0b;
             background-color: rgba(255, 255, 255, 0.1);
         }
 
         #subscribe-form button {
             padding: 15px 30px;
             font-size: 18px;
-            background-color: #ff3b3b;
+            background-color: #640b0b;
             color: white;
             border: none;
             border-radius: 8px;
@@ -510,7 +506,6 @@
         }
 
         #subscribe-form button:hover {
-            background-color: #d12f2f;
             transform: scale(1.05);
         }
 
@@ -535,7 +530,7 @@
         /* Контейнер для контактов */
         .contacts-container {
             text-align: center;
-            padding: 80px 50px;
+            padding: 80px 20px;
             color: white;
         }
 
@@ -594,11 +589,11 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 25px;
         }
 
         .social-icons a img {
-            width: 40px;
+            width: 50%;
             transition: 0.3s ease-in-out;
         }
 
@@ -628,10 +623,6 @@
 
             .social-icons {
                 gap: 10px;
-            }
-
-            .social-icons a img {
-                width: 35px;
             }
         }
 
@@ -728,6 +719,139 @@
             }
         }
 
+        .rights a {
+            font-size: 1px;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        /* Общие изменения адаптивности */
+        @media (max-width: 1200px) {
+            #hero h1 {
+                font-size: 150px;
+            }
+
+            .date-box {
+                width: 150px;
+                height: 150px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                width: 95%;
+            }
+
+            #hero h1 {
+                font-size: 100px;
+            }
+
+            .date-box {
+                width: 130px;
+                height: 130px;
+                font-size: 18px;
+            }
+
+            .goals-container div {
+                max-width: 48%;
+            }
+
+            .location-card {
+                width: 48%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .burger {
+                display: block;
+            }
+
+            .navigation {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .navigation.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            #hero h1 {
+                font-size: 70px;
+            }
+
+            .date-box {
+                width: 110px;
+                height: 110px;
+                font-size: 16px;
+            }
+
+            .goals-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .goals-container div {
+                max-width: 90%;
+            }
+
+            .location-card {
+                width: 90%;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 50px;
+            }
+
+            .date-box {
+                width: 100px;
+                height: 100px;
+                font-size: 11px;
+            }
+
+            .goals-container div {
+                max-width: 100%;
+            }
+
+            .location-card {
+                width: 100%;
+            }
+
+            #subscribe-form input {
+                width: 100%;
+            }
+
+            #subscribe-form button {
+                width: 100%;
+            }
+        }
 
     </style>
 </head>
@@ -777,7 +901,7 @@
     <br>
     <p>Это платформа для инноваций, бизнеса, нетворкинга и инвестиций!</p>
 
-    <h2>Цели и задачи</h2>
+    <h2 style="margin-top: 30px">Цели и задачи</h2>
     <div class="goals-container">
         <div>
             <img src="./icons/integration.png" alt="Сотрудничество">
@@ -887,14 +1011,13 @@
                     width="100%" height="400" frameborder="1" allowfullscreen="true"
                     style="position:relative;"></iframe>
         </div>
-        <!--        <img src="./images/map-placeholder.jpg" alt="Карта проезда">-->
     </div>
 </section>
 
 
 <section id="program">
     <div class="program-container">
-        <h2>Программа фестиваля</h2>
+        <h2>Программа</h2>
         <p class="subtitle">Следите за обновлениями! Полная программа появится скоро.</p>
 
         <div class="program-grid">
@@ -984,7 +1107,7 @@
                 <div class="social-icons">
                     <a href="#"><img src="./icons/vk.png" alt="VK"></a>
                     <a href="#"><img src="./icons/tg.png" alt="Telegram"></a>
-                    <a href="#"><img src="./icons/yt.png" alt="YouTube"></a>
+                    <a href="#"><img src="./icons/wh.png" alt="Whatsapp"></a>
                 </div>
             </div>
         </div>
@@ -1007,6 +1130,11 @@
 
 <footer>
     <p>&copy; 2025 Киберия. Все права защищены.</p>
+    <div class="rights">
+        <a href="https://www.flaticon.com/ru/free-icons/" title="Сотрудничество иконки">Сотрудничество иконки от surang,
+            itim2101, nangicon, Good Ware, Freepik, San D, Vitaly Gorbachev, smalllikeart, Karyative, Smashicons, Us and
+            Up - Flaticon</a>
+    </div>
 </footer>
 
 <script>

@@ -7,3 +7,8 @@
     font-family: 'Tsarevich';
     src: url('../fonts/Tsarevich old.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.woff2') format('woff2');
+}

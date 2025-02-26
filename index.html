@@ -80,7 +80,7 @@
         }
 
         nav ul li a:hover {
-            color: #ff3b3b;
+            color: #a71212;
         }
 
         /* Хедер появляется раньше */
@@ -215,7 +215,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 90vh;
+            height: 100vh;
             text-align: center;
         }
 
@@ -230,7 +230,7 @@
         }
 
         section {
-            padding: 100px 50px;
+            padding: 30px 50px;
         }
 
         section img {
@@ -452,6 +452,9 @@
             color: white;
             padding: 80px 50px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #news h2 {
@@ -528,6 +531,10 @@
         }
 
         /* Контейнер для контактов */
+        #contacts {
+            padding: 100px 20px;
+        }
+
         .contacts-container {
             text-align: center;
             padding: 80px 20px;
@@ -610,120 +617,13 @@
             border-radius: 12px;
         }
 
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .contact-details {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-card {
-                width: 90%;
-            }
-
-            .social-icons {
-                gap: 10px;
-            }
-        }
-
-        /*   --------------------- */
-        /* Дополнительная адаптивность для планшетов (макс. 1024px) */
-        @media (max-width: 1024px) {
-            #hero h1 {
-                font-size: 120px;
-            }
-
-            .date-box {
-                width: 140px;
-                height: 140px;
-            }
-
-            .goals-container {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-            }
-
-            .goals-container div {
-                max-width: 40%;
-            }
-
-            .location-container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .location-card {
-                width: 45%;
-            }
-        }
-
-        /* Дополнительная адаптивность для мобильных (макс. 768px) */
-        @media (max-width: 768px) {
-            /* Уменьшение заголовка */
-            #hero h1 {
-                font-size: 80px;
-            }
-
-            /* Центрирование контента */
-            #hero p {
-                font-size: 16px;
-                padding: 0 10px;
-            }
-
-            .date-box {
-                width: 120px;
-                height: 120px;
-                font-size: 18px;
-            }
-
-            /* Упрощаем цели и задачи */
-            .goals-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .goals-container div {
-                max-width: 90%;
-            }
-
-            /* Секция "Локация" */
-            .location-card {
-                width: 90%;
-            }
-
-            /* Программа */
-            .program-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Контакты */
-            .contact-details {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-card {
-                width: 90%;
-            }
-
-            /* Форма подписки */
-            #subscribe-form {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            #subscribe-form input,
-            #subscribe-form button {
-                width: 100%;
-            }
-        }
-
         .rights a {
             font-size: 1px;
             text-decoration: none;
             color: black;
         }
+
+        /*   --------------------- */
 
 
         /* Общие изменения адаптивности */
@@ -827,7 +727,7 @@
 
         @media (max-width: 480px) {
             #hero h1 {
-                font-size: 50px;
+                font-size: 100px;
             }
 
             .date-box {
@@ -872,9 +772,6 @@
 
                 <li><a href="#locations">Площадка</a></li>
                 <li><a href="#program">Программа</a></li>
-                <!--                <li><a href="#participants">Участники</a></li>-->
-                <!--                <li><a href="#sport">Спорт</a></li>-->
-                <!--                <li><a href="#partners">Партнеры</a></li>-->
                 <li><a href="#news">Новости</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -1018,7 +915,7 @@
 <section id="program">
     <div class="program-container">
         <h2>Программа</h2>
-        <p class="subtitle">Следите за обновлениями! Полная программа появится скоро.</p>
+        <p class="subtitle">Полная программа скоро появится на сайте.</p>
 
         <div class="program-grid">
             <div class="program-item">
@@ -1046,27 +943,17 @@
     </div>
 </section>
 
-<!--<section id="participants">-->
-<!--    <h2>Участники</h2>-->
-<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
-<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
-<!--</section>-->
-
-<!--<section id="sport">-->
-<!--    <h2>Спорт</h2>-->
-<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
-<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
-<!--</section>-->
-
-<!--<section id="partners">-->
-<!--    <h2>Партнеры</h2>-->
-<!--    <p>Раздел находится в разработке следите за обновлениями</p>-->
-<!--    <a href="#" class="btn-program">Следите за новостями</a>-->
-<!--</section>-->
-
 <section id="news">
     <h2>Новости и события</h2>
     <p>Следите за обновлениями, оставьте свою почту и получайте свежие новости о фестивале!</p>
+    <div class="contact-card" style="background: none">
+        <h3>Социальные сети</h3>
+        <div class="social-icons">
+            <a href="#"><img src="./icons/vk.png" alt="VK"></a>
+            <a href="#"><img src="./icons/tg.png" alt="Telegram"></a>
+            <a href="#"><img src="./icons/wh.png" alt="Whatsapp"></a>
+        </div>
+    </div>
 
     <form id="subscribe-form">
         <input type="email" id="email" placeholder="Введите вашу почту" required>
@@ -1084,25 +971,21 @@
 
         <div class="contact-details">
             <div class="contact-card">
-                <!--                <img src="./icons/location.png" alt="Адрес">-->
                 <h3>Адрес</h3>
                 <p>Южно-Сахалинск, Аэродром "Пушистый"</p>
             </div>
 
             <div class="contact-card">
-                <!--                <img src="./icons/phone.png" alt="Телефон">-->
                 <h3>Телефон</h3>
                 <p>+7 (999) 123-45-67</p>
             </div>
 
             <div class="contact-card">
-                <!--                <img src="./icons/email.png" alt="Email">-->
                 <h3>Email</h3>
                 <p>cyberia.event@yandex.ru</p>
             </div>
 
             <div class="contact-card">
-                <!--                <img src="./icons/social.png" alt="Соцсети">-->
                 <h3>Социальные сети</h3>
                 <div class="social-icons">
                     <a href="#"><img src="./icons/vk.png" alt="VK"></a>
@@ -1187,13 +1070,20 @@
         window.addEventListener("scroll", checkScroll);
         checkScroll();
 
-        // Автоскролл к секции hero после загрузки страницы
-        setTimeout(() => {
-            window.scrollTo({
-                top: hero.offsetTop,
-                behavior: "smooth"
-            });
-        }, 500); // Задержка 500 мс для плавного эффекта
+        let hasScrolled = false; // Флаг для предотвращения повторного срабатывания
+        const aboutSection = document.getElementById("about");
+
+        function autoScroll() {
+            if (!hasScrolled && window.scrollY <= 20) {
+                hasScrolled = true;
+                window.scrollTo({
+                    top: aboutSection.offsetTop - document.querySelector("header").offsetHeight,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        window.addEventListener("scroll", autoScroll, {once: true});
     });
 
     document.getElementById("subscribe-form").addEventListener("submit", function (event) {

@@ -1,4 +1,9 @@
 @font-face {
-	font-family: 'Rockwell';
-	src: url('../fonts/ofont.ru_Preslav.ttf');
+    font-family: 'Triod';
+    src: url('../fonts/TriodPostnaja.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Tsarevich';
+    src: url('../fonts/Tsarevich old.woff2') format('woff2');
 }

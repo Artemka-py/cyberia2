@@ -753,6 +753,73 @@
             }
         }
 
+
+        /* Контейнер для новых разделов контактов */
+        .contact-extra-sections {
+            display: flex;
+            flex-wrap: wrap; /* Располагает подразделы в ряд, переносит на новую строку при недостатке места */
+            gap: 20px; /* Отступы между двумя подразделами */
+            align-items: baseline;
+        }
+
+        /* Стиль карточки с реквизитами */
+        .requisites-card {
+            flex: 1 1 400px; /* Карточка растягивается, минимальная ширина ~400px */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .requisites-card p {
+            margin-bottom: 10px;
+        }
+
+        /* Заголовки подразделов */
+        .requisites-card h2,
+        .useful-links h2 {
+            margin-top: 0;
+        }
+
+        /* Блок полезных ссылок */
+        .useful-links {
+            flex: 1 1 300px; /* Блок с ссылками растягивается, минимальная ширина ~300px */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* Контейнер для кнопок-ссылок */
+        .links-list {
+            display: flex;
+            flex-wrap: wrap; /* Кнопки будут переноситься на новую строку, если не помещаются в одну */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Стили для кнопок-ссылок */
+        .pdf-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #640b0b; /* Пример: зеленый фон кнопки (можно заменить на фирменный цвет сайта) */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Ховер-эффект для кнопок (при наведении) */
+        .pdf-button:hover {
+            background-color: #750e0e; /* Немного более темный фон при наведении */
+        }
+
+        /* Адаптивность: на узких экранах располагать подразделы друг под другом */
+        @media (max-width: 600px) {
+            .contact-extra-sections {
+                flex-direction: column;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -793,7 +860,7 @@
 <section id="about">
     <h2>О проекте</h2>
     <p>Это грандиозное событие летом в августе 2026 года,</p>
-    <p>объединяющее киберспорт, фиджитал-спорт, IT-бизнес,</p>
+    <p>объединяющее киберспорт, фиджитал-спорт, IT-бизнес</p>
     <p>и игровую индустрию по всему миру.</p>
     <br>
     <p>Это платформа для инноваций, бизнеса, нетворкинга и инвестиций!</p>
@@ -947,7 +1014,6 @@
     <h2>Новости и события</h2>
     <p>Следите за обновлениями, оставьте свою почту и получайте свежие новости о фестивале!</p>
     <div class="contact-card" style="background: none">
-        <h3>Социальные сети</h3>
         <div class="social-icons">
             <a href="#"><img src="./icons/vk.png" alt="VK"></a>
             <a href="#"><img src="./icons/tg.png" alt="Telegram"></a>
@@ -960,7 +1026,8 @@
         <button type="submit">Подписаться</button>
     </form>
 
-    <p id="confirmation-message" style="display: none; margin-top: 15px;">Спасибо! Вы подписаны на новости.</p>
+    <p id="confirmation-message" style="display: none; margin-top: 20px; font-size: 25px; color: white">Спасибо! Вы
+        подписаны на новости.</p>
 </section>
 
 
@@ -1006,6 +1073,36 @@
                         width="100%" height="400" frameborder="1" allowfullscreen="true"
                         style="position:relative;"></iframe>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-extra-sections">
+    <!-- Реквизиты -->
+    <div class="requisites-card">
+        <h2>Реквизиты</h2>
+        <p><strong>Полное название:</strong> ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ПИНГ-ИТ»</p>
+        <p><strong>Краткое название:</strong> ООО "ПИНГ-ИТ"</p>
+        <p><strong>ИНН:</strong> 9729284861</p>
+        <p><strong>КПП:</strong> 772901001</p>
+        <p><strong>ОГРН:</strong> 1197746338602</p>
+        <p><strong>Юридический адрес:</strong> 121471, г. Москва, ул. Рябиновая, д. 61А, стр. 1</p>
+        <p><strong>Банк:</strong> ООО «Банк Точка»</p>
+        <p><strong>Расчетный счет:</strong> 40702 810 3025 0008 9985</p>
+        <p><strong>БИК:</strong> 044 525 104</p>
+        <p><strong>Корреспондентский счет:</strong> 3010 1810 7453 7452 5104</p>
+        <p><strong>Генеральный директор:</strong> Николаенко Александр Алексеевич</p>
+    </div>
+
+    <!-- Полезные ссылки -->
+    <div class="useful-links">
+        <h2>Полезные ссылки</h2>
+        <div class="links-list">
+            <a href="/files/Меморандум_об_авторских_правах.pdf" class="pdf-button" download>Меморандум об авторских
+                правах</a>
+            <a href="/files/Согласие_на_обработку_персональных_данных_клиентов.pdf" class="pdf-button" download>Согласие
+                на обработку персональных данных клиентов</a>
+            <a href="files/Политика_Конфиденциальности.pdf" class="pdf-button" download>Политика конфиденциальности</a>
         </div>
     </div>
 </section>
